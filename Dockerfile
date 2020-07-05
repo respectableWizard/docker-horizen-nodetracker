@@ -41,8 +41,8 @@ RUN apt-get update \
     && apt-get autoremove -y \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-VOLUME ["${HOME}"]
-WORKDIR ${HOME}
+VOLUME ["/opt/nodetracker"]
+WORKDIR "/opt/nodetracker"
 ADD ./bin /usr/local/bin
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["start-unprivileged.sh"]

@@ -35,5 +35,5 @@ cat $FILE
 ls -lah $DIR/
 
 echo "Initialization completed successfully"
-EXECUTABLE="node /opt/nodetracker/apps.js"
+EXECUTABLE="node apps.js"
 exec $EXECUTABLE
