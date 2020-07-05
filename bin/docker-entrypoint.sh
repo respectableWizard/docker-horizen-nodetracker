@@ -4,5 +4,5 @@ set -x
 USER=horizen
 DIR=$HOME/.zen
 
-chown -R ${USER} /opt/nodetracker
+chown -R ${USER} $HOME /opt/nodetracker 
 exec gosu ${USER} "$@"

@@ -36,7 +36,7 @@ RUN apt-get update \
     && n 10.12.0 \
     && git clone https://github.com/ZencashOfficial/nodetracker.git /opt/nodetracker \
     && cd /opt/nodetracker \
-    && npm install \
+    && npm install /opt/nodetracker \
     && apt-get remove software-properties-common build-essential apt-transport-https lsb-release dirmngr pwgen git jq ufw curl aria2 -y \
     && apt-get autoremove -y \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
