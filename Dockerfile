@@ -41,7 +41,6 @@ RUN apt-get update \
     && apt-get autoremove -y \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-EXPOSE 9033
 VOLUME ["/opt/nodetracker"]
 WORKDIR "/opt/nodetracker"
 ADD ./bin /usr/local/bin
