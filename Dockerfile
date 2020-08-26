@@ -44,5 +44,5 @@ RUN apt-get update \
 VOLUME ["/opt/nodetracker"]
 WORKDIR "/opt/nodetracker"
 ADD ./bin /usr/local/bin
-ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["start-unprivileged.sh"]
+ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+CMD ["/usr/local/bin/start-unprivileged.sh"]
