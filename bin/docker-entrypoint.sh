@@ -36,6 +36,6 @@ if [ ! -e "${CONFIG}" ]; then
 }
 EOF
 fi
-cat ${CONFIG}
-chown -R ${USER} $HOME /opt/nodetracker /usr/local
+cat ${CONFIG} &&
+n 10.12.0 &&
 exec "$@"

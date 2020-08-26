@@ -28,8 +28,11 @@ RUN apt-get update \
     && apt-get autoremove -y \
     && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+RUN chown -R ${USER} ${HOME} /opt/nodetracker /usr/local
+
 VOLUME ["/opt/nodetracker"]
 WORKDIR "/opt/nodetracker"
 ADD ./bin /usr/local/bin
 ENTRYPOINT ["docker-entrypoint.sh"]
+USER horizen
 CMD ["start-unprivileged.sh"]
