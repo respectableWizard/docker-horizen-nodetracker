@@ -12,4 +12,4 @@ function build {
   # docker push $NAMESPACE/$COMPONENT
   # docker push $NAMESPACE/$COMPONENT:latest
 }
-build horizen-nodetracker latest
+build docker-horizen-nodetracker latest

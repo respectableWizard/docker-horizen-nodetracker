@@ -18,7 +18,7 @@ RUN groupadd -g ${GROUP_ID} ${USER} \
     && useradd -u ${USER_ID} -g ${USER} -s /bin/bash -m -d ${HOME} ${USER}
 
 RUN apt-get update \
-    && apt-get install npm git -y \
+    && apt-get install -y --no-install-recommends wget ca-certificates npm git \
     && npm install -g n \
     && n 10.12.0 \
     && git clone https://github.com/respectableWizard/nodetracker.git /opt/nodetracker \
@@ -31,6 +31,5 @@ RUN apt-get update \
 VOLUME ["/opt/nodetracker"]
 WORKDIR "/opt/nodetracker"
 ADD ./bin /usr/local/bin
-USER horizen
-ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
-CMD ["/usr/local/bin/start-unprivileged.sh"]
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["start-unprivileged.sh"]
