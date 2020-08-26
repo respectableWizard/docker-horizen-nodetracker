@@ -38,4 +38,4 @@ EOF
 fi
 cat ${CONFIG}
 chown -R ${USER} $HOME /opt/nodetracker /usr/local
-exec gosu ${USER} "$@"
+exec "$@"
