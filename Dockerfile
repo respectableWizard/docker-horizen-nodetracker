@@ -34,5 +34,5 @@ VOLUME ["/opt/nodetracker"]
 WORKDIR "/opt/nodetracker"
 ADD ./bin /usr/local/bin
 USER horizen
-ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
-CMD ["/usr/local/bin/start-unprivileged.sh"]
+ENTRYPOINT ["sh","/usr/local/bin/docker-entrypoint.sh"]
+CMD ["sh","/usr/local/bin/start-unprivileged.sh"]
